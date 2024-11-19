@@ -58,9 +58,11 @@ class Graph:
                     if minimum_weight_edge[v_component] == -1 or \
                             minimum_weight_edge[v_component][2] > w:
                         minimum_weight_edge[v_component] = [u, v, w]
-
+            break_flag = True
             for node in range(self.m_v):
+
                 if minimum_weight_edge[node] != -1:
+                    break_flag = False
                     u = minimum_weight_edge[node][0]
                     v = minimum_weight_edge[node][1]
                     w = minimum_weight_edge[node][2]
@@ -75,6 +77,8 @@ class Graph:
                                 # + str(v) + "]\n"
                                 # + "Added weight: " + str(w) + "\n")
                         num_of_components -= 1
+            if break_flag:
+                break
 
             minimum_weight_edge = [-1] * self.m_v
             # print(self.m_component)
@@ -93,8 +97,8 @@ def read_graph(file_path):
                 adjacency_list[u] = []
             if v not in adjacency_list:
                 adjacency_list[v] = []
-            adjacency_list[u].append((v, w))
-            adjacency_list[v].append((u, w))
+            adjacency_list[u].append((v, abs(w)))
+            adjacency_list[v].append((u, abs(w)))
 
 if __name__ == '__main__':
 

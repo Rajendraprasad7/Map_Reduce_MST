@@ -113,6 +113,9 @@ func readGraph(filePath string) map[int][]edge {
 		u, _ := strconv.Atoi(parts[0])
 		v, _ := strconv.Atoi(parts[1])
 		w, _ := strconv.Atoi(parts[2])
+		if w < 0 {
+			w = -w
+		}
 		adjacencyList[u] = append(adjacencyList[u], edge{v, w})
 		adjacencyList[v] = append(adjacencyList[v], edge{u, w})
 	}
