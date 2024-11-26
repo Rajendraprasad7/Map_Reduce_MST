@@ -72,7 +72,6 @@ func (mr *MapReduceFramework) Map(adjList map[int][]Edge) map[int][]Edge {
 	var mu sync.Mutex
 	var wg sync.WaitGroup
 
-	// Split work among workers
 	for vertex, edges := range adjList {
 		wg.Add(1)
 		go func(v int, es []Edge) {
@@ -141,7 +140,6 @@ func readMTXFile(filename string) (map[int][]Edge, int) {
 		valid   bool
 	}
 	mappedLines := make(chan MTXLine, numWorkers*chunkSize)
-	done := make(chan bool)
 
 	var chunks [][]string
 	var currentChunk []string
@@ -169,60 +167,58 @@ func readMTXFile(filename string) (map[int][]Edge, int) {
 				}
 
 				fields := strings.Fields(line)
-				if len(fields) != 3 {
+				if len(fields) < 2 {
 					continue
 				}
 
 				u, err1 := strconv.Atoi(fields[0])
 				v, err2 := strconv.Atoi(fields[1])
-				w, err3 := strconv.Atoi(fields[2])
+				w := 1
+				if len(fields) == 3 {
+					w, _ = strconv.Atoi(fields[2])
+				}
 				if w < 0 {
 					w = -w
 				}
 
-				if err1 == nil && err2 == nil && err3 == nil {
+				if err1 == nil && err2 == nil {
 					mappedLines <- MTXLine{u, v, w, true}
-				}
-
-				if err1 == nil && err2 == nil && err3 == nil {
-					mappedLines <- MTXLine{v, u, w, true}
+					mappedLines <- MTXLine{v, u, w, true} 
 				}
 			}
 		}(chunk)
 	}
 
+	go func() {
+		wg.Wait()
+		close(mappedLines)
+	}()
+
 	adjList := make(map[int][]Edge)
 	maxVertex := 0
 	var mu sync.Mutex
 
-	go func() {
-		for line := range mappedLines {
-			if !line.valid {
-				continue
-			}
-
-			mu.Lock()
-			if line.u > maxVertex {
-				maxVertex = line.u
-			}
-			if line.v > maxVertex {
-				maxVertex = line.v
-			}
-
-			adjList[line.u] = append(adjList[line.u], Edge{line.u, line.v, line.w})
-			adjList[line.v] = append(adjList[line.v], Edge{line.v, line.u, line.w})
-			mu.Unlock()
+	for line := range mappedLines {
+		if !line.valid {
+			continue
 		}
-		done <- true
-	}()
 
-	wg.Wait()
-	close(mappedLines)
+		mu.Lock()
+		if line.u > maxVertex {
+			maxVertex = line.u
+		}
+		if line.v > maxVertex {
+			maxVertex = line.v
+		}
 
-	<-done
+		adjList[line.u] = append(adjList[line.u], Edge{line.u, line.v, line.w})
+		adjList[line.v] = append(adjList[line.v], Edge{line.v, line.u, line.w})
+		mu.Unlock()
+	}
 
 	return adjList, maxVertex
 }
+
 
 func main() {
 	if len(os.Args) < 2 {
@@ -230,12 +226,15 @@ func main() {
 		os.Exit(1)
 	}
 
+	totalStartTime := time.Now()
+
 	debugOutput := struct {
 		InputFile         string `json:"input_file"`
 		FileReadTime      float64 `json:"file_read_time"`
 		Iterations        int `json:"total_iterations"`
 		TotalMapTime      float64 `json:"total_map_time"`
 		TotalReduceTime   float64 `json:"total_reduce_time"`
+		TotalTime         float64 `json:"total_time"`
 		MSTWeight         int `json:"mst_weight"`
 		FinalComponents   int `json:"final_components"`
 		IterationDetails  []struct {
@@ -258,7 +257,7 @@ func main() {
 
 	dsu := NewDSU(maxVertex + 1)
 	
-	mr := NewMapReduceFramework(4, dsu) // Using 4 workers
+	mr := NewMapReduceFramework(4, dsu) 
 	
 	mstEdges := make([]Edge, 0)
 	
@@ -343,14 +342,17 @@ func main() {
 	finalComponents := len(componentCount)
 	fmt.Printf("Final Connected Components: %d\n", finalComponents)
 
+	totalTime := time.Since(totalStartTime)
+
 	debugOutput.Iterations = iteration
 	debugOutput.TotalMapTime = totalMapTime.Seconds()
 	debugOutput.TotalReduceTime = totalReduceTime.Seconds()
 	debugOutput.MSTWeight = mstWeight
 	debugOutput.FinalComponents = finalComponents
+	debugOutput.TotalTime = totalTime.Seconds()
 
 	inputFilename := os.Args[1]
-	outputFilename := fmt.Sprintf("%s_data.json", strings.TrimSuffix(inputFilename, filepath.Ext(inputFilename)))
+	outputFilename := fmt.Sprintf("%s_mr.json", strings.TrimSuffix(inputFilename, filepath.Ext(inputFilename)))
 
 	outputFile, err := os.Create(outputFilename)
 	if err != nil {
@@ -368,4 +370,5 @@ func main() {
 	}
 
 	fmt.Printf("\nDebug data written to %s\n", outputFilename)
+	fmt.Printf("Total Execution Time: %f\n", totalTime.Seconds())
 }

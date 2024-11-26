@@ -1,0 +1,36 @@
+{
+  "input_file": "c-40.mtx",
+  "file_read_time": 0.066067709,
+  "total_iterations": 3,
+  "total_map_time": 0.073336667,
+  "total_reduce_time": 0.007174458,
+  "total_time": 0.148508333,
+  "mst_weight": 4517,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.043463333,
+      "reduce_time": 0.00703525,
+      "pre_component_count": 9941,
+      "edges_added": 9836,
+      "partial_mst_weight": 4475
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.021193709,
+      "reduce_time": 0.0001095,
+      "pre_component_count": 105,
+      "edges_added": 101,
+      "partial_mst_weight": 4517
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.008679625,
+      "reduce_time": 0.000029708,
+      "pre_component_count": 4,
+      "edges_added": 3,
+      "partial_mst_weight": 4517
+    }
+  ]
+}

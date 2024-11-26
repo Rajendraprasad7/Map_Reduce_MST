@@ -1,0 +1,28 @@
+{
+  "input_file": "sample.mtx",
+  "file_read_time": 0.000086208,
+  "total_iterations": 2,
+  "total_map_time": 0.0000255,
+  "total_reduce_time": 0.000031958,
+  "total_time": 0.000268625,
+  "mst_weight": 217,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.000010542,
+      "reduce_time": 0.000007041,
+      "pre_component_count": 10,
+      "edges_added": 7,
+      "partial_mst_weight": 117
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.000014958,
+      "reduce_time": 0.000024917,
+      "pre_component_count": 3,
+      "edges_added": 2,
+      "partial_mst_weight": 217
+    }
+  ]
+}

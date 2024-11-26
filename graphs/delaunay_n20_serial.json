@@ -1,0 +1,84 @@
+{
+  "input_file": "delaunay_n20.mtx",
+  "file_read_time": 0.000111791,
+  "total_time": 11.500136334,
+  "total_iterations": 9,
+  "total_map_time": 10.902246042,
+  "total_reduce_time": 0.34733795800000006,
+  "mst_weight": 1048575,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.826369917,
+      "reduce_time": 0.235200291,
+      "pre_component_count": 1048576,
+      "edges_added": 944422,
+      "partial_mst_weight": 944422
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 1.795664875,
+      "reduce_time": 0.092114583,
+      "pre_component_count": 104154,
+      "edges_added": 81086,
+      "partial_mst_weight": 1025508
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 1.625962625,
+      "reduce_time": 0.010461875,
+      "pre_component_count": 23068,
+      "edges_added": 17255,
+      "partial_mst_weight": 1042763
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 1.168469917,
+      "reduce_time": 0.003174834,
+      "pre_component_count": 5813,
+      "edges_added": 4360,
+      "partial_mst_weight": 1047123
+    },
+    {
+      "iteration_number": 5,
+      "map_time": 1.076668708,
+      "reduce_time": 0.001623917,
+      "pre_component_count": 1453,
+      "edges_added": 1084,
+      "partial_mst_weight": 1048207
+    },
+    {
+      "iteration_number": 6,
+      "map_time": 1.066044166,
+      "reduce_time": 0.001436875,
+      "pre_component_count": 369,
+      "edges_added": 279,
+      "partial_mst_weight": 1048486
+    },
+    {
+      "iteration_number": 7,
+      "map_time": 1.051567459,
+      "reduce_time": 0.000892667,
+      "pre_component_count": 90,
+      "edges_added": 69,
+      "partial_mst_weight": 1048555
+    },
+    {
+      "iteration_number": 8,
+      "map_time": 1.0834025,
+      "reduce_time": 0.000862958,
+      "pre_component_count": 21,
+      "edges_added": 16,
+      "partial_mst_weight": 1048571
+    },
+    {
+      "iteration_number": 9,
+      "map_time": 1.208095875,
+      "reduce_time": 0.001569958,
+      "pre_component_count": 5,
+      "edges_added": 4,
+      "partial_mst_weight": 1048575
+    }
+  ]
+}

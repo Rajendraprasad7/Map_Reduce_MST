@@ -92,7 +92,11 @@ def read_graph(file_path):
         for line in f:
             if line.startswith('%'):
                 continue
-            u, v, w = map(int, line.split())
+            ipt = list(map(int, line.split()))
+            if len(ipt) == 3:
+                u, v, w = ipt
+            else:
+                u, v, w = ipt[:2], 1
             if u not in adjacency_list:
                 adjacency_list[u] = []
             if v not in adjacency_list:

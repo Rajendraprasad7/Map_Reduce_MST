@@ -1,0 +1,20 @@
+{
+  "input_file": "19.mtx",
+  "file_read_time": 0.000147792,
+  "total_iterations": 1,
+  "total_map_time": 0.000007042,
+  "total_reduce_time": 0.000005291,
+  "total_time": 0.0003255,
+  "mst_weight": 19,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.000007042,
+      "reduce_time": 0.000005291,
+      "pre_component_count": 4,
+      "edges_added": 3,
+      "partial_mst_weight": 19
+    }
+  ]
+}

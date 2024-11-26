@@ -1,0 +1,52 @@
+{
+  "input_file": "ca-HepTh.mtx",
+  "file_read_time": 0.036813125,
+  "total_iterations": 5,
+  "total_map_time": 0.071303833,
+  "total_reduce_time": 0.008453084,
+  "total_time": 0.120454125,
+  "mst_weight": 9448,
+  "final_components": 429,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.0302905,
+      "reduce_time": 0.007355417,
+      "pre_component_count": 9877,
+      "edges_added": 8271,
+      "partial_mst_weight": 8271
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.016964041,
+      "reduce_time": 0.000969958,
+      "pre_component_count": 1606,
+      "edges_added": 1074,
+      "partial_mst_weight": 9345
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.011324208,
+      "reduce_time": 0.000105416,
+      "pre_component_count": 532,
+      "edges_added": 100,
+      "partial_mst_weight": 9445
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 0.007246209,
+      "reduce_time": 0.000020334,
+      "pre_component_count": 432,
+      "edges_added": 3,
+      "partial_mst_weight": 9448
+    },
+    {
+      "iteration_number": 5,
+      "map_time": 0.005478875,
+      "reduce_time": 0.000001959,
+      "pre_component_count": 429,
+      "edges_added": 0,
+      "partial_mst_weight": 9448
+    }
+  ]
+}

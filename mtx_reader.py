@@ -5,7 +5,11 @@ class MTXReader(MRJob):
     def mapper(self, _, line):
         if line.startswith('%'):
             return
-        u, v, w = map(int, line.split())
+        ipt = list(map(int, line.split()))
+        if len(ipt) == 3:
+            u, v, w = ipt
+        else:
+            u, v, w = ipt[:2], 1
         yield (u, v), w
         yield (v, u), w  
 

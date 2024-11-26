@@ -1,0 +1,52 @@
+{
+  "input_file": "pkustk02.mtx",
+  "file_read_time": 0.677709083,
+  "total_iterations": 5,
+  "total_map_time": 0.667791083,
+  "total_reduce_time": 0.010186499,
+  "total_time": 1.358762917,
+  "mst_weight": 10799,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.283596875,
+      "reduce_time": 0.0087185,
+      "pre_component_count": 10800,
+      "edges_added": 9850,
+      "partial_mst_weight": 9850
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.214203458,
+      "reduce_time": 0.001062333,
+      "pre_component_count": 950,
+      "edges_added": 854,
+      "partial_mst_weight": 10704
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.107578083,
+      "reduce_time": 0.000215,
+      "pre_component_count": 96,
+      "edges_added": 79,
+      "partial_mst_weight": 10783
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 0.045400875,
+      "reduce_time": 0.000113875,
+      "pre_component_count": 17,
+      "edges_added": 14,
+      "partial_mst_weight": 10797
+    },
+    {
+      "iteration_number": 5,
+      "map_time": 0.017011792,
+      "reduce_time": 0.000076791,
+      "pre_component_count": 3,
+      "edges_added": 2,
+      "partial_mst_weight": 10799
+    }
+  ]
+}

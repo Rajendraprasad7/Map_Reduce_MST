@@ -1,0 +1,52 @@
+{
+  "input_file": "wing_nodal.mtx",
+  "file_read_time": 0.000025167,
+  "total_time": 0.076856,
+  "total_iterations": 5,
+  "total_map_time": 0.07316604200000001,
+  "total_reduce_time": 0.001960082,
+  "mst_weight": 10936,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.00734475,
+      "reduce_time": 0.001787875,
+      "pre_component_count": 10937,
+      "edges_added": 10428,
+      "partial_mst_weight": 10428
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.019498958,
+      "reduce_time": 0.000126791,
+      "pre_component_count": 509,
+      "edges_added": 429,
+      "partial_mst_weight": 10857
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.016611375,
+      "reduce_time": 0.000024458,
+      "pre_component_count": 80,
+      "edges_added": 62,
+      "partial_mst_weight": 10919
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 0.015420292,
+      "reduce_time": 0.00001225,
+      "pre_component_count": 18,
+      "edges_added": 15,
+      "partial_mst_weight": 10934
+    },
+    {
+      "iteration_number": 5,
+      "map_time": 0.014290667,
+      "reduce_time": 0.000008708,
+      "pre_component_count": 3,
+      "edges_added": 2,
+      "partial_mst_weight": 10936
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "input_file": "PGPgiantcompo.mtx",
+  "file_read_time": 0.033348208,
+  "total_iterations": 4,
+  "total_map_time": 0.063889291,
+  "total_reduce_time": 0.008687375,
+  "total_time": 0.108625416,
+  "mst_weight": 10681,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.03572775,
+      "reduce_time": 0.007305542,
+      "pre_component_count": 10680,
+      "edges_added": 9219,
+      "partial_mst_weight": 9221
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.015973833,
+      "reduce_time": 0.001154375,
+      "pre_component_count": 1461,
+      "edges_added": 1277,
+      "partial_mst_weight": 10498
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.005741167,
+      "reduce_time": 0.000208875,
+      "pre_component_count": 184,
+      "edges_added": 177,
+      "partial_mst_weight": 10675
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 0.006446541,
+      "reduce_time": 0.000018583,
+      "pre_component_count": 7,
+      "edges_added": 6,
+      "partial_mst_weight": 10681
+    }
+  ]
+}

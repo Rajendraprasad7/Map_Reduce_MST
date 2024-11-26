@@ -1,0 +1,44 @@
+{
+  "input_file": "Oregon-2.mtx",
+  "file_read_time": 0.000020542,
+  "total_time": 0.026383667,
+  "total_iterations": 3,
+  "total_map_time": 0.023253376,
+  "total_reduce_time": 0.001467334,
+  "mst_weight": 11154,
+  "final_components": 307,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.003587125,
+      "reduce_time": 0.001348792,
+      "pre_component_count": 11461,
+      "edges_added": 10883,
+      "partial_mst_weight": 10883
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.007139792,
+      "reduce_time": 0.000083125,
+      "pre_component_count": 578,
+      "edges_added": 258,
+      "partial_mst_weight": 11141
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.006499917,
+      "reduce_time": 0.000014583,
+      "pre_component_count": 320,
+      "edges_added": 13,
+      "partial_mst_weight": 11154
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 0.006026542,
+      "reduce_time": 0.000020834,
+      "pre_component_count": 307,
+      "edges_added": 0,
+      "partial_mst_weight": 11154
+    }
+  ]
+}

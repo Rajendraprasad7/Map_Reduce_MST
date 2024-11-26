@@ -1,0 +1,68 @@
+{
+  "input_file": "delaunay_n20.mtx",
+  "file_read_time": 5.678986333,
+  "total_iterations": 7,
+  "total_map_time": 9.280395417,
+  "total_reduce_time": 1.012533918,
+  "total_time": 16.717599833,
+  "mst_weight": 1048575,
+  "final_components": 1,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 4.46548025,
+      "reduce_time": 0.925584167,
+      "pre_component_count": 1048576,
+      "edges_added": 942482,
+      "partial_mst_weight": 942482
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 2.030972209,
+      "reduce_time": 0.075701166,
+      "pre_component_count": 106094,
+      "edges_added": 93897,
+      "partial_mst_weight": 1036379
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.921787541,
+      "reduce_time": 0.00949775,
+      "pre_component_count": 12197,
+      "edges_added": 10852,
+      "partial_mst_weight": 1047231
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 0.516760167,
+      "reduce_time": 0.001325959,
+      "pre_component_count": 1345,
+      "edges_added": 1186,
+      "partial_mst_weight": 1048417
+    },
+    {
+      "iteration_number": 5,
+      "map_time": 0.454700375,
+      "reduce_time": 0.000257584,
+      "pre_component_count": 159,
+      "edges_added": 133,
+      "partial_mst_weight": 1048550
+    },
+    {
+      "iteration_number": 6,
+      "map_time": 0.463262708,
+      "reduce_time": 0.000125667,
+      "pre_component_count": 26,
+      "edges_added": 21,
+      "partial_mst_weight": 1048571
+    },
+    {
+      "iteration_number": 7,
+      "map_time": 0.427432167,
+      "reduce_time": 0.000041625,
+      "pre_component_count": 5,
+      "edges_added": 4,
+      "partial_mst_weight": 1048575
+    }
+  ]
+}

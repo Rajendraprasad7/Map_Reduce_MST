@@ -1,0 +1,100 @@
+{
+  "input_file": "roadNet-PA.mtx",
+  "file_read_time": 0.000101541,
+  "total_time": 8.4020445,
+  "total_iterations": 10,
+  "total_map_time": 7.678586999,
+  "total_reduce_time": 0.3106677080000001,
+  "mst_weight": 1085058,
+  "final_components": 3034,
+  "iteration_details": [
+    {
+      "iteration_number": 1,
+      "map_time": 0.466843916,
+      "reduce_time": 0.204898042,
+      "pre_component_count": 1088092,
+      "edges_added": 897421,
+      "partial_mst_weight": 897421
+    },
+    {
+      "iteration_number": 2,
+      "map_time": 0.790116375,
+      "reduce_time": 0.070697541,
+      "pre_component_count": 190671,
+      "edges_added": 144967,
+      "partial_mst_weight": 1042388
+    },
+    {
+      "iteration_number": 3,
+      "map_time": 0.904760125,
+      "reduce_time": 0.020376333,
+      "pre_component_count": 45704,
+      "edges_added": 33181,
+      "partial_mst_weight": 1075569
+    },
+    {
+      "iteration_number": 4,
+      "map_time": 0.879966083,
+      "reduce_time": 0.006307708,
+      "pre_component_count": 12523,
+      "edges_added": 7329,
+      "partial_mst_weight": 1082898
+    },
+    {
+      "iteration_number": 5,
+      "map_time": 0.7556435,
+      "reduce_time": 0.002325083,
+      "pre_component_count": 5194,
+      "edges_added": 1662,
+      "partial_mst_weight": 1084560
+    },
+    {
+      "iteration_number": 6,
+      "map_time": 0.697585792,
+      "reduce_time": 0.001362458,
+      "pre_component_count": 3532,
+      "edges_added": 384,
+      "partial_mst_weight": 1084944
+    },
+    {
+      "iteration_number": 7,
+      "map_time": 0.714204917,
+      "reduce_time": 0.00108475,
+      "pre_component_count": 3148,
+      "edges_added": 91,
+      "partial_mst_weight": 1085035
+    },
+    {
+      "iteration_number": 8,
+      "map_time": 0.676376583,
+      "reduce_time": 0.000937375,
+      "pre_component_count": 3057,
+      "edges_added": 18,
+      "partial_mst_weight": 1085053
+    },
+    {
+      "iteration_number": 9,
+      "map_time": 0.561825167,
+      "reduce_time": 0.000904709,
+      "pre_component_count": 3039,
+      "edges_added": 4,
+      "partial_mst_weight": 1085057
+    },
+    {
+      "iteration_number": 10,
+      "map_time": 0.553663833,
+      "reduce_time": 0.000900875,
+      "pre_component_count": 3035,
+      "edges_added": 1,
+      "partial_mst_weight": 1085058
+    },
+    {
+      "iteration_number": 11,
+      "map_time": 0.677600708,
+      "reduce_time": 0.000872834,
+      "pre_component_count": 3034,
+      "edges_added": 0,
+      "partial_mst_weight": 1085058
+    }
+  ]
+}
